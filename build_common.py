@@ -278,7 +278,7 @@ def section(inner, cls=""):
 
 
 def cta_band(heading, sub, wa_msg=None):
-    wa_attr = f' data-wa-msg="{wa_msg}"' if wa_msg else " data-wa"
+    wa_attr = f' data-wa data-wa-msg="{wa_msg}"' if wa_msg else " data-wa"
     return f"""
 <div class="cta-band">
   <h2>{heading}</h2>

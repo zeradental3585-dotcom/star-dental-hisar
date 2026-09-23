@@ -7,9 +7,14 @@
     return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + text;
   }
 
-  // Wire up every [data-wa] element with a page-aware, pre-filled WhatsApp link
+  // Wire up every [data-wa] or [data-wa-msg] element with a page-aware,
+  // pre-filled WhatsApp link. (Both attributes must be matched here: several
+  // CTA buttons across the site — including the homepage hero's primary
+  // "Book on WhatsApp" button — carry only data-wa-msg with a custom
+  // pre-filled message and no data-wa, so a selector of "[data-wa]" alone
+  // silently skips them and leaves their href as "#" forever.)
   function wireWhatsAppLinks() {
-    var els = document.querySelectorAll("[data-wa]");
+    var els = document.querySelectorAll("[data-wa], [data-wa-msg]");
     els.forEach(function (el) {
       var msg = el.getAttribute("data-wa-msg");
       if (!msg) {

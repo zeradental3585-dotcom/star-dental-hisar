@@ -23,7 +23,7 @@ def page_home():
         <span class="trust-pill">{ICONS['check']} Advanced Implant Centre</span>
       </div>
       <div class="cta-row">
-        <a class="btn btn-wa" data-wa-msg="Hi Star Dental Clinic, I'd like to book a consultation." href="#">{ICONS['wa']} Book on WhatsApp</a>
+        <a class="btn btn-wa" data-wa data-wa-msg="Hi Star Dental Clinic, I'd like to book a consultation." href="#">{ICONS['wa']} Book on WhatsApp</a>
         <a class="btn btn-outline-light" href="tel:{PHONE_TEL}">{ICONS['phone']} Call {PHONE_DISPLAY}</a>
       </div>
     </div>
@@ -209,7 +209,7 @@ def page_implants():
       <h1>Fixed, Permanent Tooth Replacement — Dental Implants in Hisar</h1>
       <p class="lede">Missing teeth affect how you eat, speak and smile. Dental implants replace the tooth root itself, giving you a fixed replacement that looks, feels and functions like a natural tooth — placed under Dr. Tarun Kalra's specialist care.</p>
       <div class="cta-row">
-        <a class="btn btn-wa" data-wa-msg="Hi, I want to know more about dental implants at Star Dental Clinic." href="#">{ICONS['wa']} Ask About Implants</a>
+        <a class="btn btn-wa" data-wa data-wa-msg="Hi, I want to know more about dental implants at Star Dental Clinic." href="#">{ICONS['wa']} Ask About Implants</a>
         <a class="btn btn-outline-light" href="tel:{PHONE_TEL}">{ICONS['phone']} Call {PHONE_DISPLAY}</a>
       </div>
     </div>
@@ -227,7 +227,7 @@ def page_implants():
     <div class="amount">Personalised implant quote</div>
     <div class="note">Implant cost depends on the number of teeth, bone condition and the implant system used.</div>
   </div>
-  <a class="btn btn-wa" data-wa-msg="Hi, I'd like a personalised quote for dental implants." href="#">{ICONS['wa']} Get My Quote on WhatsApp</a>
+  <a class="btn btn-wa" data-wa data-wa-msg="Hi, I'd like a personalised quote for dental implants." href="#">{ICONS['wa']} Get My Quote on WhatsApp</a>
 </div>
 <p class="price-disclaimer">Every case is different — during your ₹200 consultation, Dr. Tarun Kalra will examine your X-rays and give you a clear, written quote with no hidden charges before any treatment begins.</p>
 """.strip("\n")
@@ -319,7 +319,7 @@ def page_aligners():
       <h1>Straighten Your Teeth Invisibly — Clear Aligners in Hisar</h1>
       <p class="lede">Clear aligners let you fix crowding, gaps and bite issues without metal braces — removable, virtually invisible, and planned around your life. Dr. Shweta Kalra designs every aligner treatment personally.</p>
       <div class="cta-row">
-        <a class="btn btn-wa" data-wa-msg="Hi, I want to know more about clear aligners at Star Dental Clinic." href="#">{ICONS['wa']} Ask About Aligners</a>
+        <a class="btn btn-wa" data-wa data-wa-msg="Hi, I want to know more about clear aligners at Star Dental Clinic." href="#">{ICONS['wa']} Ask About Aligners</a>
         <a class="btn btn-outline-light" href="tel:{PHONE_TEL}">{ICONS['phone']} Call {PHONE_DISPLAY}</a>
       </div>
     </div>
@@ -337,7 +337,7 @@ def page_aligners():
     <div class="amount">Personalised aligner quote</div>
     <div class="note">Cost depends on how much movement your teeth need and the number of aligner sets required.</div>
   </div>
-  <a class="btn btn-wa" data-wa-msg="Hi, I'd like a personalised quote for clear aligners." href="#">{ICONS['wa']} Get My Quote on WhatsApp</a>
+  <a class="btn btn-wa" data-wa data-wa-msg="Hi, I'd like a personalised quote for clear aligners." href="#">{ICONS['wa']} Get My Quote on WhatsApp</a>
 </div>
 <p class="price-disclaimer">Every smile is different — during your ₹200 consultation, Dr. Shweta Kalra will assess your teeth and give you a clear, written aligner quote before you commit.</p>
 """.strip("\n")
@@ -597,7 +597,7 @@ def service_detail_body(svc):
     <div class="amount">Get a personalised quote</div>
     <div class="note">Cost depends on your specific case — you'll get a clear, written quote after your ₹200 consultation.</div>
   </div>
-  <a class="btn btn-wa" data-wa-msg="Hi, I'd like to know more about {svc['name']} at Star Dental Clinic." href="#">{ICONS['wa']} Ask on WhatsApp</a>
+  <a class="btn btn-wa" data-wa data-wa-msg="Hi, I'd like to know more about {svc['name']} at Star Dental Clinic." href="#">{ICONS['wa']} Ask on WhatsApp</a>
 </div>
 """.strip("\n")
     points_html = "".join(f'<li>{ICONS["check"]} <span>{p}</span></li>' for p in svc["points"])
@@ -609,7 +609,7 @@ def service_detail_body(svc):
     <h1>{svc["name"]} in Hisar</h1>
     <p class="lede">{svc["intro"]}</p>
     <div class="cta-row">
-      <a class="btn btn-wa" data-wa-msg="Hi, I'd like to book a consultation for {svc['name']}." href="#">{ICONS['wa']} Book a Consultation</a>
+      <a class="btn btn-wa" data-wa data-wa-msg="Hi, I'd like to book a consultation for {svc['name']}." href="#">{ICONS['wa']} Book a Consultation</a>
       <a class="btn btn-call" href="tel:{PHONE_TEL}">{ICONS['phone']} Call {PHONE_DISPLAY}</a>
     </div>
   </div>
