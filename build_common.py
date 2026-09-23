@@ -120,7 +120,7 @@ def header_html(active_href, page_label):
     </nav>
     <div class="header-cta">
       <a class="btn btn-call btn-sm" href="tel:{PHONE_TEL}">{ICONS['phone']} <span class="txt">Call Now</span></a>
-      <a class="btn btn-wa btn-sm" data-wa href="#">{ICONS['wa']} WhatsApp</a>
+      <a class="btn btn-wa btn-sm" data-wa href="#">{ICONS['wa']} <span class="txt">WhatsApp</span></a>
       <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>

@@ -127,10 +127,10 @@ def page_home():
 {eyebrow("Inside The Clinic")}
 <h2>A modern, ISO-certified clinic at Fawara Chowk</h2>
 <div class="photo-strip" style="margin-top:24px">
-  <img src="{THUMB}clinic-exterior.jpg" alt="Star Dental Clinic exterior, Fawara Chowk, Hisar">
-  <img src="{THUMB}dr-tarun-reception.jpg" alt="Reception at Star Dental Clinic, Hisar">
-  <img src="{THUMB}both-doctors-two-chairs.jpg" alt="Treatment chairs at Star Dental Clinic, Hisar">
-  <img src="{THUMB}dr-shweta-treating-patient.jpg" alt="Dr. Shweta Kalra treating a patient at Star Dental Clinic, Hisar">
+  <span class="ph-frame"><img src="{THUMB}clinic-exterior.jpg" alt="Star Dental Clinic exterior, Fawara Chowk, Hisar"></span>
+  <span class="ph-frame"><img src="{THUMB}dr-tarun-reception.jpg" alt="Reception at Star Dental Clinic, Hisar"></span>
+  <span class="ph-frame"><img src="{THUMB}both-doctors-two-chairs.jpg" alt="Treatment chairs at Star Dental Clinic, Hisar"></span>
+  <span class="ph-frame"><img src="{THUMB}dr-shweta-treating-patient.jpg" alt="Dr. Shweta Kalra treating a patient at Star Dental Clinic, Hisar"></span>
 </div>
 <div class="center" style="margin-top:24px"><a class="btn btn-call" href="gallery.html">View Full Gallery →</a></div>
 """.strip("\n")

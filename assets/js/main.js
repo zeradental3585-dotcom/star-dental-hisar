@@ -90,10 +90,70 @@
     });
   }
 
+  // Header shadow once the page has scrolled
+  function wireHeaderScroll() {
+    var header = document.querySelector("header.site-header");
+    if (!header) return;
+    function update() {
+      if (window.scrollY > 8) header.classList.add("scrolled");
+      else header.classList.remove("scrolled");
+    }
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+  }
+
+  // Scroll-reveal: fades/slides content in as it enters the viewport.
+  // Progressive enhancement only — if IntersectionObserver is unavailable,
+  // or the user prefers reduced motion, everything is shown immediately.
+  function wireScrollReveal() {
+    var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var selector = [
+      ".card", ".doctor-card", ".testi-card", ".article-card", ".ring-card",
+      ".step", ".price-band", ".two-col", ".faq-item", ".badge-row",
+      ".ph-frame", ".gallery-grid a"
+    ].join(",");
+    var targets = document.querySelectorAll(selector);
+    if (!targets.length) return;
+
+    if (reduceMotion || typeof IntersectionObserver === "undefined") {
+      targets.forEach(function (el) { el.classList.add("reveal", "in-view"); });
+      return;
+    }
+
+    targets.forEach(function (el, i) {
+      el.classList.add("reveal");
+      el.classList.add("reveal-" + ((i % 4) + 1));
+    });
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.01, rootMargin: "0px 0px -10% 0px" }
+    );
+    targets.forEach(function (el) { observer.observe(el); });
+
+    // Safety net: content is never opacity-hidden (see CSS), only offset a
+    // few px — but settle everything to final position quickly regardless,
+    // so nothing stays subtly mis-placed for long.
+    setTimeout(function () {
+      document.querySelectorAll(".reveal:not(.in-view)").forEach(function (el) {
+        el.classList.add("in-view");
+      });
+    }, 1500);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     wireWhatsAppLinks();
     wireNav();
     wireFaq();
     wireContactForm();
+    wireHeaderScroll();
+    wireScrollReveal();
   });
 })();
