@@ -255,7 +255,7 @@ def page_shell(*, active_href, title, meta_description, page_label, body_html, e
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/img/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 {schema_scripts(extra_schemas)}
 </head>
@@ -270,7 +270,7 @@ def page_shell(*, active_href, title, meta_description, page_label, body_html, e
 
 
 def eyebrow(text):
-    return f'<div class="eyebrow">{ICONS["star"]} {text}</div>'
+    return f'<div class="eyebrow"><span class="eyebrow-rule"></span>{text}</div>'
 
 
 def section(inner, cls=""):
