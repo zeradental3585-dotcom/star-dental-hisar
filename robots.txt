@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://stardentalhisar.zeradental.in/sitemap.xml
