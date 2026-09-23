@@ -17,6 +17,7 @@ def page_home():
       <h1>Get Your Smile Fixed by Hisar's MDS-Qualified Dental Specialists</h1>
       <p class="lede">Dr. Tarun's Star Dental Clinic is a premier ISO-certified practice at Fawara Chowk, Hisar — led by an MDS specialist couple offering single-sitting root canals, dental implants, invisible aligners and complete family dental care.</p>
       <div class="trust-pills">
+        <a class="trust-pill" href="{GBP_URL}" target="_blank" rel="noopener">{ICONS['star']} {GBP_RATING}★ · {GBP_REVIEW_COUNT} Google Reviews</a>
         <span class="trust-pill">{ICONS['check']} ISO-Certified Clinic</span>
         <span class="trust-pill">{ICONS['check']} MDS Specialist (PGIMS, Rohtak)</span>
         <span class="trust-pill">{ICONS['check']} 14+ Years Experience</span>
@@ -892,13 +893,16 @@ def page_reviews():
     {eyebrow("Patient Reviews")}
     <h1>What Patients Say on Google</h1>
     <p class="lede">We believe in real, verified reviews — not written testimonials on a website. See what patients are saying about Star Dental Clinic directly on our Google Business Profile.</p>
+    <div class="trust-pills">
+      <a class="trust-pill" href="{GBP_URL}" target="_blank" rel="noopener">{ICONS['star']} {GBP_RATING}★ Rated · {GBP_REVIEW_COUNT} Google Reviews</a>
+    </div>
   </div>
 </section>
 """.strip("\n")
     gbp_card = f"""
 <div class="card center" style="max-width:560px;padding:40px">
   <div class="card-icon center" style="margin-left:auto;margin-right:auto">{ICONS['star']}</div>
-  <h2>Read Our Verified Google Reviews</h2>
+  <h2>{GBP_RATING} out of 5, from {GBP_REVIEW_COUNT} Google Reviews</h2>
   <p>Every review on our Google Business Profile comes from a real patient — see the latest feedback, or leave your own after your visit.</p>
   <a class="btn btn-gold" href="{GBP_URL}" target="_blank" rel="noopener">{ICONS['star']} View Reviews on Google</a>
 </div>
@@ -917,8 +921,8 @@ def page_reviews():
     ])
     write_page("reviews.html", page_shell(
         active_href=active,
-        title="Patient Reviews | Star Dental Clinic Hisar",
-        meta_description="Read verified Google reviews from Star Dental Clinic patients in Hisar, or leave your own after your visit.",
+        title=f"Patient Reviews | {GBP_RATING}★ ({GBP_REVIEW_COUNT}+ Reviews) | Star Dental Clinic Hisar",
+        meta_description=f"Rated {GBP_RATING} out of 5 from {GBP_REVIEW_COUNT} verified Google reviews. Read what Star Dental Clinic patients in Hisar are saying, or leave your own after your visit.",
         page_label="Reviews",
         body_html=body,
         extra_schemas=[breadcrumb_schema([("Home", ""), ("Reviews", active)])],

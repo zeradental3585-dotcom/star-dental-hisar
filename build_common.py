@@ -14,6 +14,10 @@ ADDRESS_CITY = "Hisar, Haryana 125001"
 ADDRESS_FULL = f"{ADDRESS_LINE1}, {ADDRESS_LINE2}, {ADDRESS_CITY}"
 MAP_EMBED_SRC = "https://www.google.com/maps?q=Star+Dental+Clinic+DSS+37+Fawara+Chowk+Lajpat+Nagar+Hisar&output=embed"
 GBP_URL = "https://share.google/FkqVolaQCX1WWk0ns"
+# Verified directly from the clinic's Google Business Profile (screenshot supplied by the
+# client, 23 Sep 2026: "Dr. Tarun's Star Dental Clinic", 4.9 stars, 546 Google reviews).
+GBP_RATING = "4.9"
+GBP_REVIEW_COUNT = 546
 OUT_DIR = os.path.join(os.path.dirname(__file__))
 
 NAV_ITEMS = [
@@ -203,6 +207,12 @@ def schema_scripts(extra_schemas=None):
             {"@type": "Physician", "name": "Dr. Tarun Kalra"},
             {"@type": "Physician", "name": "Dr. Shweta Kalra"},
         ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": GBP_RATING,
+            "reviewCount": str(GBP_REVIEW_COUNT),
+            "bestRating": "5",
+        },
     }
     scripts = [f'<script type="application/ld+json">{json.dumps(dentist_schema, ensure_ascii=False)}</script>']
     for s in (extra_schemas or []):
