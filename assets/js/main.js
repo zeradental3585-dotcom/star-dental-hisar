@@ -2,6 +2,30 @@
 (function () {
   var WHATSAPP_NUMBER = "919896695691"; // +91 98966 95691
 
+  // Google Apps Script Web App URL that appends a row to the "Leads" tab
+  // of the clinic's lead-tracking Google Sheet. Set once after deploying
+  // apps-script/Code.gs (Deploy > New deployment > Web app > Execute as
+  // Me > Who has access Anyone) — see that file's header comment.
+  var LEAD_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbz8CxQPKlvVD-3Swix0Hp81yeGRJRRmtClj5rdAEc-kCVT5e3EtuetH8K0c0p4ma-o/exec";
+
+  // Fire-and-forget: logs one lead event to the Google Sheet. Never blocks
+  // or breaks the WhatsApp/tel navigation it accompanies — failures (offline,
+  // ad blockers, the placeholder URL still being unset) are swallowed so a
+  // broken logging pipe can never take the real CTA down with it.
+  function logLead(payload) {
+    if (!LEAD_WEBHOOK_URL || LEAD_WEBHOOK_URL.indexOf("REPLACE_WITH_DEPLOYMENT_ID") !== -1) return;
+    try {
+      payload.page = payload.page || document.body.getAttribute("data-page-label") || document.title;
+      payload.referrer = document.referrer || "";
+      fetch(LEAD_WEBHOOK_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload),
+      }).catch(function () {});
+    } catch (err) {}
+  }
+
   function buildWaLink(msg) {
     var text = encodeURIComponent(msg || "Hi Star Dental Clinic, I'd like to book an appointment.");
     return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + text;
@@ -13,6 +37,12 @@
   // "Book on WhatsApp" button — carry only data-wa-msg with a custom
   // pre-filled message and no data-wa, so a selector of "[data-wa]" alone
   // silently skips them and leaves their href as "#" forever.)
+  //
+  // Every one of these is also logged to the Sheet as a lightweight
+  // "WhatsApp Click" lead (page + which button) — the contact form logs full
+  // details separately, but most visitors convert straight from a WhatsApp
+  // button on the hero or a service page without ever filling a form, so
+  // that intent needs to be captured too.
   function wireWhatsAppLinks() {
     var els = document.querySelectorAll("[data-wa], [data-wa-msg]");
     els.forEach(function (el) {
@@ -24,6 +54,13 @@
       el.setAttribute("href", buildWaLink(msg));
       el.setAttribute("target", "_blank");
       el.setAttribute("rel", "noopener");
+      el.addEventListener("click", function () {
+        logLead({
+          type: "WhatsApp Click",
+          cta: (el.textContent || "").replace(/\s+/g, " ").trim(),
+          message: msg,
+        });
+      });
     });
   }
 
@@ -74,7 +111,8 @@
     });
   }
 
-  // Contact form -> forwards to WhatsApp with the entered details pre-filled
+  // Contact form -> forwards to WhatsApp with the entered details pre-filled,
+  // and logs the full submission to the Sheet as a named lead.
   function wireContactForm() {
     var form = document.querySelector("#contact-form");
     if (!form) return;
@@ -91,6 +129,13 @@
         interest && interest.value ? "Interested in: " + interest.value : "",
         message && message.value ? "Message: " + message.value : "",
       ].filter(Boolean);
+      logLead({
+        type: "Contact Form",
+        name: name ? name.value : "",
+        phone: phone ? phone.value : "",
+        interest: interest ? interest.value : "",
+        message: message ? message.value : "",
+      });
       window.open(buildWaLink(parts.join("\n")), "_blank", "noopener");
     });
   }
