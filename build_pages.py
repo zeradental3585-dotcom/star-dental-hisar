@@ -431,7 +431,7 @@ def page_about():
 
     tarun = f"""
 <div class="doctor-card">
-  <img src="{IMG}dr-tarun-award-event.jpg" alt="Dr. Tarun Kalra being felicitated at a dental event">
+  <img src="{IMG}dr-tarun-portrait.jpg" alt="Dr. Tarun Kalra, MDS, Star Dental Clinic Hisar">
   <div>
     <div class="doctor-name">Dr. Tarun Kalra</div>
     <div class="doctor-title">BDS, MDS (PGIMS, Rohtak) — Endodontics &amp; Implants</div>
@@ -448,7 +448,7 @@ def page_about():
 
     shweta = f"""
 <div class="doctor-card">
-  <img src="{IMG}dr-shweta-treating-woman.jpg" alt="Dr. Shweta Kalra treating a patient at Star Dental Clinic Hisar">
+  <img src="{IMG}dr-shweta-posing.jpg" alt="Dr. Shweta Kalra, Cosmetic Dentist, Star Dental Clinic Hisar">
   <div>
     <div class="doctor-name">Dr. Shweta Kalra</div>
     <div class="doctor-title">BDS, MIDA — Cosmetic Dentistry</div>
