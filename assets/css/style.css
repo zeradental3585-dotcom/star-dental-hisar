@@ -140,7 +140,7 @@ nav.primary-nav a.nav-link:hover::after,nav.primary-nav a.nav-link.active::after
   position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--line);border-radius:12px;
   box-shadow:var(--shadow);min-width:250px;padding:8px;display:none;
 }
-.has-dropdown:hover .dropdown,.has-dropdown.open .dropdown{display:block}
+.has-dropdown:hover .dropdown{display:block}
 .dropdown a{display:block;padding:9px 12px;border-radius:8px;font-size:.9rem;font-weight:500;color:var(--ink-soft);border-left:2px solid transparent;transition:background .2s ease,color .2s ease,border-color .2s ease}
 .dropdown a:hover{background:var(--bg-soft);color:var(--navy-dark);border-left-color:var(--gold-dark)}
 .header-cta{display:flex;align-items:center;gap:10px}

@@ -51,7 +51,7 @@
     // Dropdown toggling on touch/mobile
     document.querySelectorAll(".has-dropdown > a.nav-link").forEach(function (link) {
       link.addEventListener("click", function (e) {
-        if (window.innerWidth <= 980) {
+        if (window.innerWidth <= 1180) {
           e.preventDefault();
           link.parentElement.classList.toggle("open");
         }
