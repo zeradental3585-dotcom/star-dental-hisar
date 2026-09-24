@@ -312,6 +312,7 @@ def footer_html():
     <div class="footer-bottom">
       <span>© {year} Star Dental Clinic, Hisar. All rights reserved.</span>
       <span>Website by <a href="https://zeradental.in" target="_blank" rel="noopener">Zera Dental</a> — a Zera Technologies company</span>
+      <span><a href="https://pms.zeradental.in/?c=star-dental-hisar#login" target="_blank" rel="noopener" style="opacity:.7;">Dentist Login</a></span>
     </div>
   </div>
 </footer>
