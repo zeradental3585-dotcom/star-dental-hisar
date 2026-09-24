@@ -434,14 +434,17 @@ def page_about():
   <img src="{IMG}dr-tarun-portrait.jpg" alt="Dr. Tarun Kalra, MDS, Star Dental Clinic Hisar">
   <div>
     <div class="doctor-name">Dr. Tarun Kalra</div>
-    <div class="doctor-title">BDS, MDS (PGIMS, Rohtak) — Endodontics &amp; Implants</div>
+    <div class="doctor-title">BDS, MDS (PGIMS, Rohtak) &middot; Endodontics &amp; Implants</div>
     <p>Dr. Tarun Kalra completed his Master's in Dental Surgery (MDS) from Pt. B.D. Sharma PGIMS, Rohtak — one of Haryana's leading government dental institutes — and has practiced in Hisar for over 14 years. His clinical focus is single-sitting root canal treatment and dental implants, and he leads treatment planning for every implant and full-mouth rehabilitation case at the clinic.</p>
-    <ul class="cred-list">
-      <li>{ICONS['check']} MDS (Master of Dental Surgery) — PGIMS, Rohtak</li>
-      <li>{ICONS['check']} 14+ years of clinical practice in Hisar</li>
-      <li>{ICONS['check']} Specialist focus: root canal treatment &amp; dental implants</li>
-      <li>{ICONS['check']} Recognised at regional dental association events</li>
-    </ul>
+    <div class="doctor-creds">
+      <span class="doctor-creds-label">Credentials</span>
+      <div class="badge-row">
+        <span class="badge">{ICONS['check']} MDS &mdash; PGIMS, Rohtak</span>
+        <span class="badge">{ICONS['check']} 14+ Years in Hisar</span>
+        <span class="badge">{ICONS['check']} Root Canal &amp; Implants</span>
+        <span class="badge">{ICONS['check']} Regional Recognition</span>
+      </div>
+    </div>
   </div>
 </div>
 """.strip("\n")
@@ -451,14 +454,17 @@ def page_about():
   <img src="{IMG}dr-shweta-posing.jpg" alt="Dr. Shweta Kalra, Cosmetic Dentist, Star Dental Clinic Hisar">
   <div>
     <div class="doctor-name">Dr. Shweta Kalra</div>
-    <div class="doctor-title">BDS, MIDA — Cosmetic Dentistry</div>
+    <div class="doctor-title">BDS, MIDA &middot; Cosmetic Dentistry</div>
     <p>Dr. Shweta Kalra brings a gentle, detail-focused approach to cosmetic dentistry — from clear aligners and smile design to routine family care. She has treated patients in Hisar for over 9 years, and is known among patients for taking the time to explain treatment options clearly before recommending a plan.</p>
-    <ul class="cred-list">
-      <li>{ICONS['check']} BDS, MIDA</li>
-      <li>{ICONS['check']} 9+ years of clinical practice in Hisar</li>
-      <li>{ICONS['check']} Specialist focus: clear aligners, smile design &amp; cosmetic dentistry</li>
-      <li>{ICONS['check']} Known for a gentle approach with children &amp; nervous patients</li>
-    </ul>
+    <div class="doctor-creds">
+      <span class="doctor-creds-label">Credentials</span>
+      <div class="badge-row">
+        <span class="badge">{ICONS['check']} BDS, MIDA</span>
+        <span class="badge">{ICONS['check']} 9+ Years in Hisar</span>
+        <span class="badge">{ICONS['check']} Aligners &amp; Smile Design</span>
+        <span class="badge">{ICONS['check']} Gentle With Nervous Patients</span>
+      </div>
+    </div>
   </div>
 </div>
 """.strip("\n")

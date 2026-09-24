@@ -264,8 +264,20 @@ nav.primary-nav a.nav-link:hover::after,nav.primary-nav a.nav-link.active::after
 .doctor-card img{border-radius:14px;width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid rgba(163,130,63,.28);transition:transform .5s var(--ease)}
 .doctor-card .cred-list li{display:flex;gap:8px;align-items:flex-start;margin-bottom:8px;font-size:.92rem;color:var(--ink-soft)}
 .doctor-card .cred-list li svg{flex:none;margin-top:3px;color:var(--gold-dark)}
-.doctor-name{font-size:1.4rem;margin-bottom:2px;font-family:var(--font-serif)}
-.doctor-title{color:var(--blue);font-weight:600;margin-bottom:14px;font-size:.95rem}
+.doctor-name{font-size:1.5rem;margin-bottom:4px;font-family:var(--font-serif)}
+.doctor-title{
+  color:var(--gold-dark);font-weight:700;margin-bottom:16px;font-size:.78rem;
+  text-transform:uppercase;letter-spacing:1.5px;
+}
+.doctor-card p{margin-bottom:0}
+.doctor-creds{margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.doctor-creds-label{
+  display:block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;
+  color:var(--muted);margin-bottom:10px;
+}
+.doctor-creds .badge-row{margin:0;gap:8px}
+.doctor-creds .badge{font-size:.78rem;padding:7px 12px;border-color:rgba(163,130,63,.28)}
+.doctor-creds .badge svg{color:var(--gold-dark)}
 @media (hover:hover) and (pointer:fine){
   .doctor-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
 }
