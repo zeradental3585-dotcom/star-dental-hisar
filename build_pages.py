@@ -14,12 +14,12 @@ def page_home():
   {IMPLANT_MOTIF_SVG}
   <div class="container">
     <div>
-      {eyebrow("Hisar's Advanced Dental Implant Centre")}
+      {eyebrow("Hisar's Advanced Implant &amp; Aligner Centre")}
       <h1>Hisar's Most Trusted Dental Implant Centre</h1>
-      <p class="lede">Dr. Tarun's Star Dental Clinic is a premier ISO-certified practice at Fawara Chowk, Hisar — where an MDS specialist couple provides fixed dental implants, single-sitting root canals, invisible aligners and complete family dental care, all under one roof.</p>
+      <p class="lede">Dr. Tarun's Star Dental Clinic is a premier ISO-certified practice at Fawara Chowk, Hisar — where an MDS specialist couple provides fixed dental implants, invisible aligners, single-sitting root canals and complete family dental care, all under one roof.</p>
       <div class="trust-pills">
         <a class="trust-pill trust-pill-featured" href="{GBP_URL}" target="_blank" rel="noopener">{ICONS['star']} {GBP_RATING}★ · {GBP_REVIEW_COUNT} Google Reviews</a>
-        <span class="trust-pill">{ICONS['implant']} Advanced Implant Centre</span>
+        <span class="trust-pill">{ICONS['implant']} Implant &amp; Aligner Centre</span>
         <span class="trust-pill">{ICONS['check']} MDS Specialist (PGIMS, Rohtak)</span>
         <span class="trust-pill">{ICONS['check']} 14+ Years Experience</span>
       </div>
@@ -34,7 +34,7 @@ def page_home():
         <span class="hero-badge-icon">{ICONS['implant']}</span>
         <div>
           <strong>14+ Yrs</strong>
-          <span>Advanced implant &amp; root canal care in Hisar</span>
+          <span>Advanced implant &amp; aligner care in Hisar</span>
         </div>
       </div>
     </div>

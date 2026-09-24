@@ -139,10 +139,6 @@ def header_html(active_href, page_label):
   </div>
   <div class="nav-scrim"></div>
 </header>
-<div class="mobile-sticky-cta">
-  <a class="btn btn-call" href="tel:{PHONE_TEL}">{ICONS['phone']} Call</a>
-  <a class="btn btn-wa" data-wa href="#">{ICONS['wa']} WhatsApp</a>
-</div>
 """.strip("\n")
 
 
