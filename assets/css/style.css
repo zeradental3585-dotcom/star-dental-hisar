@@ -372,6 +372,19 @@ nav.primary-nav a.nav-link:hover::after,nav.primary-nav a.nav-link.active::after
 .testi-name{font-weight:700;margin-top:12px;font-family:var(--font-serif)}
 .testi-role{font-size:.82rem;color:var(--muted)}
 
+/* Real Google review cards (quote + verified attribution, no scraped photos) */
+.review-card{display:flex;flex-direction:column;padding-bottom:44px}
+.review-quote{font-size:.96rem;color:var(--ink-soft);line-height:1.6}
+.review-foot{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:14px}
+.review-avatar{
+  flex:none;width:42px;height:42px;border-radius:50%;color:#fff;font-family:var(--font-serif);
+  font-weight:700;font-size:1.05rem;display:flex;align-items:center;justify-content:center;
+}
+.review-foot .testi-name{margin-top:0;font-size:.98rem}
+.review-google-badge{margin-left:auto;flex:none;opacity:.85}
+.review-topic-tag{position:absolute;top:20px;right:20px;font-size:.72rem;padding:4px 10px}
+.review-card.testi-card{position:relative}
+
 /* Reasons / compare list */
 .check-list li{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px;font-size:.96rem;color:var(--ink-soft)}
 .check-list li svg{flex:none;margin-top:3px;color:var(--wa-green-dark)}

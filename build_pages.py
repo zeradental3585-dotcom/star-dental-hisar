@@ -175,6 +175,15 @@ def page_home():
 <div style="margin-top:20px">{faq_block(faqs)}</div>
 """.strip("\n")
 
+    home_review_ids = ["wahid", "kulwinderjit", "haan"]
+    reviews_section_html = f"""
+{eyebrow("Real Patient Reviews")}
+<h2>What implant &amp; aligner patients say on Google</h2>
+<p class="lede">Verified feedback from Star Dental Clinic's Google Business Profile — filtered to reviews about implants and aligners specifically. Nothing here is written for the website.</p>
+{reviews_grid(ids=home_review_ids)}
+<div class="center" style="margin-top:24px"><a class="btn btn-call" href="{GBP_URL}" target="_blank" rel="noopener">{ICONS['google']} Read All {GBP_REVIEW_COUNT} Reviews on Google</a></div>
+""".strip("\n")
+
     body = "\n".join([
         hero,
         section(badges, "section-tight"),
@@ -184,7 +193,8 @@ def page_home():
         section(photos, "section-alt"),
         section(steps),
         section(location, "section-alt"),
-        section(faq_section),
+        section(reviews_section_html),
+        section(faq_section, "section-alt"),
         section(cta_band(
             "Ready to fix your smile?",
             "Message us on WhatsApp with your concern — Dr. Tarun or Dr. Shweta will personally guide you on the next step.",
@@ -197,7 +207,7 @@ def page_home():
         meta_description="ISO-certified dental clinic in Hisar at Fawara Chowk. MDS specialist Dr. Tarun Kalra & Dr. Shweta Kalra offer dental implants, invisible aligners, single-sitting RCT & family dental care. Book on WhatsApp.",
         page_label="Home",
         body_html=body,
-        extra_schemas=[faq_schema(faqs)],
+        extra_schemas=[faq_schema(faqs)] + reviews_schema(ids=home_review_ids),
     ))
 
 
@@ -287,13 +297,22 @@ def page_implants():
 <div style="margin-top:20px">{faq_block(faqs)}</div>
 """.strip("\n")
 
+    implant_review_ids = ["wahid", "kulwinderjit", "shakti", "ajaib"]
+    reviews_section_html = f"""
+{eyebrow("Real Implant Patients")}
+<h2>What Hisar's implant patients say on Google</h2>
+<p class="lede">Genuine, verified reviews from patients who came to Star Dental Clinic specifically for a dental implant — pulled straight from our Google Business Profile.</p>
+{reviews_grid(ids=implant_review_ids, cols=2)}
+""".strip("\n")
+
     body = "\n".join([
         hero,
         section(price, "section-tight"),
         section(why_implants),
         section(process, "section-alt"),
         section(candidates),
-        section(faq_section, "section-alt"),
+        section(reviews_section_html, "section-alt"),
+        section(faq_section),
         section(cta_band(
             "Get a personalised implant quote",
             "Send Dr. Tarun a quick WhatsApp message with your concern — he'll tell you exactly what to expect at your consultation.",
@@ -307,7 +326,7 @@ def page_implants():
         meta_description="Get permanent, natural-looking dental implants in Hisar from MDS specialist Dr. Tarun Kalra at Star Dental Clinic, Fawara Chowk. Single tooth to full-mouth implants. Book a consultation.",
         page_label="Dental Implants",
         body_html=body,
-        extra_schemas=[faq_schema(faqs), breadcrumb_schema([("Home", ""), ("Dental Implants", active)])],
+        extra_schemas=[faq_schema(faqs), breadcrumb_schema([("Home", ""), ("Dental Implants", active)])] + reviews_schema(ids=implant_review_ids),
     ))
 
 
@@ -393,13 +412,22 @@ def page_aligners():
 <div style="margin-top:20px">{faq_block(faqs)}</div>
 """.strip("\n")
 
+    aligner_review_ids = ["haan", "badri"]
+    reviews_section_html = f"""
+{eyebrow("Real Aligner Patients")}
+<h2>What Hisar's aligner patients say on Google</h2>
+<p class="lede">Genuine, verified reviews from patients who chose Star Dental Clinic for clear aligner / Invisalign treatment — pulled straight from our Google Business Profile.</p>
+{reviews_grid(ids=aligner_review_ids, cols=2)}
+""".strip("\n")
+
     body = "\n".join([
         hero,
         section(price, "section-tight"),
         section(why),
         section(process, "section-alt"),
         section(vs),
-        section(faq_section, "section-alt"),
+        section(reviews_section_html, "section-alt"),
+        section(faq_section),
         section(cta_band(
             "Start your aligner journey",
             "Message Dr. Shweta on WhatsApp with a photo of your smile — she'll tell you what to expect at your consultation.",
@@ -413,7 +441,7 @@ def page_aligners():
         meta_description="Straighten your teeth invisibly with clear aligners in Hisar. Dr. Shweta Kalra plans every case personally at Star Dental Clinic, Fawara Chowk. Book a consultation on WhatsApp.",
         page_label="Clear Aligners",
         body_html=body,
-        extra_schemas=[faq_schema(faqs), breadcrumb_schema([("Home", ""), ("Clear Aligners", active)])],
+        extra_schemas=[faq_schema(faqs), breadcrumb_schema([("Home", ""), ("Clear Aligners", active)])] + reviews_schema(ids=aligner_review_ids),
     ))
 
 
@@ -916,6 +944,22 @@ def page_reviews():
   <a class="btn btn-gold" href="{GBP_URL}" target="_blank" rel="noopener">{ICONS['star']} View Reviews on Google</a>
 </div>
 """.strip("\n")
+
+    implant_review_ids = ["wahid", "kulwinderjit", "shakti", "ajaib"]
+    aligner_review_ids = ["haan", "badri"]
+    curated_implant = f"""
+{eyebrow("Implant Patients")}
+<h2>Reviews about our dental implants</h2>
+<p class="lede">Filtered directly from Google using the "dental implant" review tag on our profile — genuine feedback, unedited.</p>
+{reviews_grid(ids=implant_review_ids, cols=2)}
+""".strip("\n")
+    curated_aligner = f"""
+{eyebrow("Aligner Patients")}
+<h2>Reviews about clear aligners &amp; Invisalign</h2>
+<p class="lede">Filtered directly from Google using the "clear aligners" / "invisalign treatment" review tags on our profile.</p>
+{reviews_grid(ids=aligner_review_ids, cols=2)}
+""".strip("\n")
+
     ask = f"""
 {eyebrow("Just Visited Us?")}
 <h2>Tell us — and other patients — how it went</h2>
@@ -925,16 +969,18 @@ def page_reviews():
     body = "\n".join([
         hero,
         section(gbp_card),
+        section(curated_implant, "section-alt"),
+        section(curated_aligner),
         section(ask, "section-alt"),
         section(cta_band("Ready to book your visit?", "Message us on WhatsApp to get started.")),
     ])
     write_page("reviews.html", page_shell(
         active_href=active,
         title=f"Patient Reviews | {GBP_RATING}★ ({GBP_REVIEW_COUNT}+ Reviews) | Star Dental Clinic Hisar",
-        meta_description=f"Rated {GBP_RATING} out of 5 from {GBP_REVIEW_COUNT} verified Google reviews. Read what Star Dental Clinic patients in Hisar are saying, or leave your own after your visit.",
+        meta_description=f"Rated {GBP_RATING} out of 5 from {GBP_REVIEW_COUNT} verified Google reviews. Read what Star Dental Clinic implant & aligner patients in Hisar are saying, or leave your own after your visit.",
         page_label="Reviews",
         body_html=body,
-        extra_schemas=[breadcrumb_schema([("Home", ""), ("Reviews", active)])],
+        extra_schemas=[breadcrumb_schema([("Home", ""), ("Reviews", active)])] + reviews_schema(ids=implant_review_ids + aligner_review_ids),
     ))
 
 

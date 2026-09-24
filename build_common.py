@@ -71,7 +71,143 @@ ICONS = {
     "clock": '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
     "wa": '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.28-.14-1.67-.82-1.93-.92-.26-.1-.45-.14-.64.14-.19.28-.74.92-.9 1.1-.17.19-.33.21-.61.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.39-1.66-1.56-1.94-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.5.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.56-.46-.48-.64-.49h-.55c-.19 0-.5.07-.76.35s-1 .98-1 2.4 1.02 2.78 1.16 2.97c.14.19 2 3.07 4.86 4.3.68.29 1.21.47 1.62.6.68.22 1.3.19 1.79.11.55-.08 1.67-.68 1.9-1.34.24-.65.24-1.21.17-1.33-.07-.12-.26-.19-.54-.33z"/><path d="M12 2a10 10 0 0 0-8.55 15.14L2 22l4.99-1.42A10 10 0 1 0 12 2zm0 18.2a8.17 8.17 0 0 1-4.17-1.14l-.3-.18-3.1.88.83-3-.2-.31A8.2 8.2 0 1 1 12 20.2z"/></svg>',
     "implant": '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 4.2c0 2.9 1.9 4.6 4.5 4.6s4.5-1.7 4.5-4.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 8.8v2.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 11.4l-2.35 8.9a1 1 0 0 0 1.72.9L12 20l.63 1.2a1 1 0 0 0 1.72-.9L12 11.4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.4 13.6h5.2M9.9 16.3h4.2M10.4 18.9h3.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>',
+    "google": '<svg width="16" height="16" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 15.9 18.9 13 24 13c3.1 0 5.8 1.1 8 3l5.7-5.7C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.5 0 10.4-1.8 14.2-5l-6.6-5.4C29.5 35.4 26.9 36 24 36c-5.3 0-9.7-3.1-11.3-7.6l-6.5 5C9.6 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.2-4.2 5.6l6.6 5.4C40.9 36.6 44 30.9 44 24c0-1.3-.1-2.7-.4-3.5z"/></svg>',
 }
+
+# Real patient reviews, sourced directly from the clinic's Google Business Profile
+# ("Dr. Tarun's Star Dental Clinic", https://share.google/FkqVolaQCX1WWk0ns), filtered
+# using Google's own "dental implant" / "clear aligners" / "invisalign treatment" review
+# tags so only feedback specifically about those two services is ever shown here — kept
+# deliberately narrow to protect the implant & aligner specialist positioning. Quotes are
+# verbatim (only trimmed of the reviewer's own trailing "... More" where Google truncates
+# on the listing itself); nothing is invented. None of these reviewers has a personal
+# photo on their Google profile — Google itself shows a plain colour-initial avatar for
+# each of them — so the site mirrors that exactly rather than sourcing or fabricating a
+# headshot for someone who never uploaded one.
+REVIEWS = [
+    {
+        "id": "kulwinderjit",
+        "name": "Kulwinderjit Singh",
+        "initial": "K",
+        "color": "#3b5b80",
+        "stars": 5,
+        "time_ago": "3 months ago",
+        "review_count": "3 reviews",
+        "topic": "implant",
+        "tag": "Dental Implant",
+        "quote": "I am from Fatehabad and was scheduled for dental implant surgery in Delhi. My friend suggested Hisar. I found Dr Tarun on Google. After a preliminary consultation, decided to go with him. I am giving this review after 48 hours of the implant being done, and am happy and satisfied. Recommended \U0001F44D",
+    },
+    {
+        "id": "wahid",
+        "name": "Md Wahid Reza",
+        "initial": "M",
+        "color": "#6b4ea3",
+        "stars": 5,
+        "time_ago": "7 months ago",
+        "review_count": "1 review",
+        "topic": "implant",
+        "tag": "Dental Implant",
+        "quote": "I took my father to Dr Tarun for Implants. He explained the process very patiently and cleared all our doubts. Later we went ahead with surgery. He underwent full mouth implants and got fixed permanent teeth in just 5 sittings. He is very happy, eats everything, even nuts. Dr Tarun is extremely humble and a skilled surgeon. It's one of the best dental implant centres in Hisar, even in Haryana.",
+    },
+    {
+        "id": "shakti",
+        "name": "Shakti Dhankar",
+        "initial": "S",
+        "color": "#c1573b",
+        "stars": 5,
+        "time_ago": "3 months ago",
+        "review_count": "1 review",
+        "topic": "implant",
+        "tag": "Dental Implant",
+        "quote": "Best dental implant centre in Hisar. I can feel natural teeth. Best services for dental treatment in Hisar.",
+    },
+    {
+        "id": "ajaib",
+        "name": "Ajaib Singh",
+        "initial": "A",
+        "color": "#1f7a6c",
+        "stars": 5,
+        "time_ago": "8 months ago",
+        "review_count": "1 review",
+        "topic": "implant",
+        "tag": "Dental Implant",
+        "quote": "Highly satisfied with the dental implant — I can eat everything. Best dental implant surgeon.",
+    },
+    {
+        "id": "haan",
+        "name": "Haan Babbe",
+        "initial": "H",
+        "color": "#a3823f",
+        "stars": 5,
+        "time_ago": "1 year ago",
+        "review_count": "1 review",
+        "topic": "aligner",
+        "tag": "Clear Aligner",
+        "quote": "The experience of “clear aligner” treatment with them was very positive. Everything went smoothly. Above all, the process was quicker than I thought. The staff's friendliness enhances the overall atmosphere. Highly recommended for orthodontic services in Hisar.",
+    },
+    {
+        "id": "badri",
+        "name": "Badri Parsad",
+        "initial": "B",
+        "color": "#3b5b80",
+        "stars": 5,
+        "time_ago": "2 years ago",
+        "review_count": "1 review",
+        "topic": "aligner",
+        "tag": "Invisalign Treatment",
+        "quote": "Highly satisfied with clear invisalign treatment, and my mom got a dental implant-supported fixed denture. Perfect dental services in Hisar... thanks Dr Tarun and all team.",
+    },
+]
+
+
+def review_card(r):
+    stars = ICONS["star"] * r["stars"]
+    return f"""
+<div class="testi-card review-card">
+  <div class="stars">{stars}</div>
+  <p class="review-quote">&ldquo;{r['quote']}&rdquo;</p>
+  <div class="review-foot">
+    <span class="review-avatar" style="background:{r['color']}">{r['initial']}</span>
+    <div>
+      <div class="testi-name">{r['name']}</div>
+      <div class="testi-role">{r['review_count']} &middot; {r['time_ago']}</div>
+    </div>
+    <span class="review-google-badge" title="Posted on Google">{ICONS['google']}</span>
+  </div>
+  <span class="tag review-topic-tag">{r['tag']}</span>
+</div>""".strip("\n")
+
+
+def reviews_grid(topic=None, ids=None, cols=3):
+    if ids:
+        chosen = [r for r in REVIEWS if r["id"] in ids]
+    elif topic:
+        chosen = [r for r in REVIEWS if r["topic"] == topic]
+    else:
+        chosen = REVIEWS
+    cards = "".join(review_card(r) for r in chosen)
+    return f'<div class="grid grid-{cols}" style="margin-top:28px">{cards}</div>'
+
+
+def reviews_schema(topic=None, ids=None):
+    if ids:
+        chosen = [r for r in REVIEWS if r["id"] in ids]
+    elif topic:
+        chosen = [r for r in REVIEWS if r["topic"] == topic]
+    else:
+        chosen = REVIEWS
+    return [
+        {
+            "@context": "https://schema.org",
+            "@type": "Review",
+            "itemReviewed": {"@type": "Dentist", "name": SITE_NAME},
+            "author": {"@type": "Person", "name": r["name"]},
+            "reviewRating": {"@type": "Rating", "ratingValue": str(r["stars"]), "bestRating": "5"},
+            "reviewBody": r["quote"],
+            "publisher": {"@type": "Organization", "name": "Google"},
+        }
+        for r in chosen
+    ]
 
 # A large, faint decorative line-art motif used only as hero background texture
 # (never a UI icon) — evokes a tooth/implant silhouette without needing real
