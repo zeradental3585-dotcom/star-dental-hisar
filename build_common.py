@@ -70,7 +70,16 @@ ICONS = {
     "pin": '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>',
     "clock": '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
     "wa": '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.28-.14-1.67-.82-1.93-.92-.26-.1-.45-.14-.64.14-.19.28-.74.92-.9 1.1-.17.19-.33.21-.61.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.39-1.66-1.56-1.94-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.5.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.56-.46-.48-.64-.49h-.55c-.19 0-.5.07-.76.35s-1 .98-1 2.4 1.02 2.78 1.16 2.97c.14.19 2 3.07 4.86 4.3.68.29 1.21.47 1.62.6.68.22 1.3.19 1.79.11.55-.08 1.67-.68 1.9-1.34.24-.65.24-1.21.17-1.33-.07-.12-.26-.19-.54-.33z"/><path d="M12 2a10 10 0 0 0-8.55 15.14L2 22l4.99-1.42A10 10 0 1 0 12 2zm0 18.2a8.17 8.17 0 0 1-4.17-1.14l-.3-.18-3.1.88.83-3-.2-.31A8.2 8.2 0 1 1 12 20.2z"/></svg>',
+    "implant": '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 4.2c0 2.9 1.9 4.6 4.5 4.6s4.5-1.7 4.5-4.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 8.8v2.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 11.4l-2.35 8.9a1 1 0 0 0 1.72.9L12 20l.63 1.2a1 1 0 0 0 1.72-.9L12 11.4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.4 13.6h5.2M9.9 16.3h4.2M10.4 18.9h3.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>',
 }
+
+# A large, faint decorative line-art motif used only as hero background texture
+# (never a UI icon) — evokes a tooth/implant silhouette without needing real
+# clinical photography. Purely decorative: aria-hidden, no semantic meaning.
+IMPLANT_MOTIF_SVG = '''<svg class="hero-motif" width="520" height="520" viewBox="0 0 100 100" fill="none" aria-hidden="true" focusable="false">
+  <path d="M50 6C32 6 19 18 21 34c1 8 6 12 5 20-1 9 6 12 11 6 3-4 4-7 4-11v-1c0 4 1 7 4 11 5 6 12 3 11-6-1-8 4-12 5-20C81 18 68 6 50 6Z" stroke="var(--gold)" stroke-width="0.6" opacity="0.5"/>
+  <path d="M38 34h24M40 44h20M42 54h16" stroke="var(--gold)" stroke-width="0.5" opacity="0.35"/>
+</svg>'''
 
 
 def esc(s):

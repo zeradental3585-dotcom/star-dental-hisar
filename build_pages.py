@@ -11,17 +11,17 @@ def page_home():
     active = "index.html"
     hero = f"""
 <section class="hero">
+  {IMPLANT_MOTIF_SVG}
   <div class="container">
     <div>
-      {eyebrow("Hisar's Advanced Implant &amp; Aligner Centre")}
-      <h1>Get Your Smile Fixed by Hisar's MDS-Qualified Dental Specialists</h1>
-      <p class="lede">Dr. Tarun's Star Dental Clinic is a premier ISO-certified practice at Fawara Chowk, Hisar — led by an MDS specialist couple offering single-sitting root canals, dental implants, invisible aligners and complete family dental care.</p>
+      {eyebrow("Hisar's Advanced Dental Implant Centre")}
+      <h1>Hisar's Most Trusted Dental Implant Centre</h1>
+      <p class="lede">Dr. Tarun's Star Dental Clinic is a premier ISO-certified practice at Fawara Chowk, Hisar — where an MDS specialist couple provides fixed dental implants, single-sitting root canals, invisible aligners and complete family dental care, all under one roof.</p>
       <div class="trust-pills">
-        <a class="trust-pill" href="{GBP_URL}" target="_blank" rel="noopener">{ICONS['star']} {GBP_RATING}★ · {GBP_REVIEW_COUNT} Google Reviews</a>
-        <span class="trust-pill">{ICONS['check']} ISO-Certified Clinic</span>
+        <a class="trust-pill trust-pill-featured" href="{GBP_URL}" target="_blank" rel="noopener">{ICONS['star']} {GBP_RATING}★ · {GBP_REVIEW_COUNT} Google Reviews</a>
+        <span class="trust-pill">{ICONS['implant']} Advanced Implant Centre</span>
         <span class="trust-pill">{ICONS['check']} MDS Specialist (PGIMS, Rohtak)</span>
         <span class="trust-pill">{ICONS['check']} 14+ Years Experience</span>
-        <span class="trust-pill">{ICONS['check']} Advanced Implant Centre</span>
       </div>
       <div class="cta-row">
         <a class="btn btn-wa" data-wa data-wa-msg="Hi Star Dental Clinic, I'd like to book a consultation." href="#">{ICONS['wa']} Book on WhatsApp</a>
@@ -31,8 +31,11 @@ def page_home():
     <div class="hero-media">
       <img src="{IMG}both-doctors-standing.jpg" alt="Dr. Tarun Kalra and Dr. Shweta Kalra, Star Dental Clinic Hisar" loading="eager">
       <div class="hero-badge">
-        <strong>14+ Yrs</strong>
-        <span>Clinical experience treating families across Hisar</span>
+        <span class="hero-badge-icon">{ICONS['implant']}</span>
+        <div>
+          <strong>14+ Yrs</strong>
+          <span>Advanced implant &amp; root canal care in Hisar</span>
+        </div>
       </div>
     </div>
   </div>
